@@ -21,8 +21,8 @@ const computerChoice = function () {
   const index = math.floor(Math.random() * options.length);
   const computerChoice = options[index];
   window.alert(`AI Choses + ${computerChoice}`);
-  const userInput = userInput.toUpperCase();
 };
+const userInput = userInput.toUpperCase();
 
 // if user chooses
 /*
