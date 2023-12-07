@@ -5,17 +5,27 @@ const win = 0;
 const lose = 0;
 const ties = 0;
 
-// creating a message 
+// creating a message
 const prompMsg = ` choose an option: \n ${game}`;
-// creating the function
+const userInput = userInput.toUpperCase();
+// creating the function to start game
 const playGame = function () {
-  const userInput = prompt(prompMsg);
+  // interaction with the user
+  const userInput = window.prompt(prompMsg);
 
   if (userInput) {
     return;
   }
 };
+// computer choices
+const computerChoice = function (){
+    const index = math.floor(Math.random()* options.length)
+    const computerChoice = options[index];
+}
 
+
+
+playGame();
 // if user chooses
 /*
 rock loses paper
