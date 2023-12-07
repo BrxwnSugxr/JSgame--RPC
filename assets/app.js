@@ -32,10 +32,10 @@ paper loses scissor
 scissor lose to rock
 */
 // check game flowchart
-const gameValidation = function () {
+const gameValidation = function (userInput, computerChoice) {
   if (userInput === computerChoice) {
     ties++;
-    window.alert('its a tie');
+    window.alert('it\'s a tie');
   } else if (
     (userInput === 'R' && computerChoice === 'S') ||
     (userInput === 'P' && computerChoice === 'R') ||
