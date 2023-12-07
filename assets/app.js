@@ -35,7 +35,7 @@ scissor lose to rock
 const gameValidation = function (userInput, computerChoice) {
   if (userInput === computerChoice) {
     ties++;
-    window.alert('it\'s a tie');
+    window.alert("it's a tie");
   } else if (
     (userInput === 'R' && computerChoice === 'S') ||
     (userInput === 'P' && computerChoice === 'R') ||
@@ -46,6 +46,10 @@ const gameValidation = function (userInput, computerChoice) {
     lose++;
     window.alert('you lose');
   }
+  // display result of game
+  window.alert(`status: \nWins:  ${win} \nLost: ${lose} \nDraw: ${ties}  `);
+
+  const playAgain = window.confirm('play again?');
 };
 
 playGame();
