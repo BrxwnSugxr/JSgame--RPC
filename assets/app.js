@@ -18,17 +18,27 @@ const playGame = function () {
   }
 };
 // computer choices
-const computerChoice = function (){
-    const index = math.floor(Math.random()* options.length)
-    const computerChoice = options[index];
-}
+const computerChoice = function () {
+  const index = math.floor(Math.random() * options.length);
+  const computerChoice = options[index];
+  window.alert(`AI Choses + ${computerChoice}`);
+};
 
-
-
-playGame();
 // if user chooses
 /*
 rock loses paper
 paper loses scissor
 scissor lose to rock
 */
+// check game flowchart
+const gameValidation = function () {
+  if (userInput === computerChoice) {
+    ties;
+    window.alert('its a tie');
+  }else if{
+    (userInput === computerChoice)
+  }
+};
+
+playGame();
+computerChoice();
