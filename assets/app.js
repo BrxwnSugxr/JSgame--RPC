@@ -7,13 +7,12 @@ const ties = 0;
 
 // creating a message
 const prompMsg = ` choose an option: \n ${game}`;
-const userInput = userInput.toUpperCase();
 // creating the function to start game
 const playGame = function () {
   // interaction with the user
   const userInput = window.prompt(prompMsg);
 
-  if (userInput) {
+  if (!userInput) {
     return;
   }
 };
@@ -22,6 +21,7 @@ const computerChoice = function () {
   const index = math.floor(Math.random() * options.length);
   const computerChoice = options[index];
   window.alert(`AI Choses + ${computerChoice}`);
+  const userInput = userInput.toUpperCase();
 };
 
 // if user chooses
@@ -33,12 +33,20 @@ scissor lose to rock
 // check game flowchart
 const gameValidation = function () {
   if (userInput === computerChoice) {
-    ties;
+    ties++;
     window.alert('its a tie');
-  }else if{
-    (userInput === computerChoice)
+  } else if (
+    (userInput === 'R' && computerChoice === 'S') ||
+    (userInput === 'P' && computerChoice === 'R') ||
+    (userInput === 'S' && computerChoice === 'P')
+  ) {
+    win++;
+  } else {
+    lose++;
+    window.alert('you lose');
   }
 };
 
 playGame();
 computerChoice();
+gameValidation();
