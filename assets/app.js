@@ -22,3 +22,11 @@ const compareChoice = function (userChoice, aiChoice) {
   if (userChoice === aiChoice) {
     window.alert('its a tie');
     return 'tie';
+  } else if (winConditions[userChoice + aiChoice]) {
+    window.alert('you win');
+    return 'win';
+  } else {
+    window.alert('you lose');
+    return 'lose';
+  }
+};
