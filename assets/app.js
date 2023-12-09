@@ -30,3 +30,11 @@ const compareChoice = function (userChoice, aiChoice) {
     return 'lose';
   }
 };
+
+const displayResults = function (win, lose, tie) {
+  window.alert(`Status: \nWins: ${win} \nlose: ${lose} \ntie: ${tie} `);
+};
+
+const askToPlayAgain = function () {
+  return window.confirm('PLay again?');
+};
