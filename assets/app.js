@@ -20,4 +20,21 @@ var playGame = function () {
   var aiChoice = options[index];
 
   window.alert(`AI chose: ${aiChoice}`);
+
+  // creating a function to compare user choice and ai choice
+  // tie
+  // if user and ai are tie then add the tie on the score borded and display it
+  if (userChoice === aiChoice) {
+    tie++;
+    window.alert('its a tie');
+  } else if (
+    // conditional operation using && and ||
+    /* R & S | P & R | S & P */
+    (userChoice === 'R' && aiChoice === 'S') ||
+    (userChoice === 'P' && aiChoice === 'R') ||
+    (userChoice === 'S' && aiChoice === 'P')
+  ) {
+    win++;
+    window.alert('you win');
+  }
 };
