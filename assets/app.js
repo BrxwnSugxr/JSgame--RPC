@@ -24,12 +24,13 @@ var playGame = function () {
   // creating a function to compare user choice and ai choice
   // tie
   // if user and ai are tie then add the tie on the score borded and display it
+  /*
   if (userChoice === aiChoice) {
     tie++;
     window.alert('its a tie');
   } else if (
     // conditional operation using && and ||
-    /* R beats S | P beats R | S beats P */
+    //  R beats S | P beats R | S beats P 
     (userChoice === 'R' && aiChoice === 'S') ||
     (userChoice === 'P' && aiChoice === 'R') ||
     (userChoice === 'S' && aiChoice === 'P')
@@ -41,7 +42,27 @@ var playGame = function () {
     lose++;
     window.alert('you lose');
   }
+*/
 
+  const winConditions = {
+    RS: true,
+    SR: true,
+    PR: true,
+    RP: true,
+    SP: true,
+    PS: true,
+  };
+
+  if (userChoice === aiChoice) {
+    tie++;
+    window.alert("It's a tie");
+  } else if (winConditions[userChoice + aiChoice]) {
+    win++;
+    window.alert('You win');
+  } else {
+    lose++;
+    window.alert('You lose');
+  }
   //   print status of game result
   window.alert(`status: \nWins: ${win} \nLose: ${lose} \nTie: ${tie} `);
 
