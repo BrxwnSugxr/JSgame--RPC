@@ -12,7 +12,7 @@ var playGame = function () {
     return;
   }
   // adding a constraint of user input to allow comparison easier
-  userChoice = userChoice.toUpperCase;
+  userChoice = userChoice.toUpperCase();
 
   //   allowing automated opponent to select R,P,S
   var index = Math.floor(Math.random() * options.length);
@@ -29,7 +29,7 @@ var playGame = function () {
     window.alert('its a tie');
   } else if (
     // conditional operation using && and ||
-    /* R & S | P & R | S & P */
+    /* R beats S | P beats R | S beats P */
     (userChoice === 'R' && aiChoice === 'S') ||
     (userChoice === 'P' && aiChoice === 'R') ||
     (userChoice === 'S' && aiChoice === 'P')
@@ -46,9 +46,11 @@ var playGame = function () {
   window.alert(`status: \nWins: ${win} \nLose: ${lose} \nTie: ${tie} `);
 
   //   asking user to play again.
-  let playGame = window.confirm('play again?');
+  let playAgain = window.confirm('play again?');
 
-  if (playGame) {
+  if (playAgain) {
     playGame();
   }
 };
+
+playGame();
