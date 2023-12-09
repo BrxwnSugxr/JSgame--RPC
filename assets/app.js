@@ -36,5 +36,19 @@ var playGame = function () {
   ) {
     win++;
     window.alert('you win');
+  } else {
+    // if above contion fails player lost
+    lose++;
+    window.alert('you lose');
+  }
+
+  //   print status of game result
+  window.alert(`status: \nWins: ${win} \nLose: ${lose} \nTie: ${tie} `);
+
+  //   asking user to play again.
+  let playGame = window.confirm('play again?');
+
+  if (playGame) {
+    playGame();
   }
 };
