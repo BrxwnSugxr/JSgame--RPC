@@ -36,5 +36,11 @@ const displayResults = function (win, lose, tie) {
 };
 
 const askToPlayAgain = function () {
-  return window.confirm('PLay again?');
+  return window.confirm('Play again?');
+};
+
+const playGame = function () {
+  let win = 0;
+  let lose = 0;
+  let tie = 0;
 };
