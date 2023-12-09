@@ -14,5 +14,10 @@ var playGame = function () {
   // adding a constraint of user input to allow comparison easier
   userChoice = userChoice.toUpperCase;
 
-  
+  //   allowing automated opponent to select R,P,S
+  var index = Math.floor(Math.random() * options.length);
+  //options[index] -> meaning it gets from the RPS and then using the index array
+  var aiChoice = options[index];
+
+  window.alert(`AI chose: ${aiChoice}`);
 };
