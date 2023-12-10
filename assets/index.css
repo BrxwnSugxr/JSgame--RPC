@@ -35,7 +35,15 @@ body {
 
 .result-score {
   margin-left: 0.1rem;
-  font-size: 5rem;
+  font-size: 0.5rem;
   color: #333;
 }
 
+.result-selection {
+  opacity: 0.5;
+}
+
+.result-selection.winner {
+  opacity: 1;
+  font-size: 1.5rem;
+}
