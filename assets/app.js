@@ -7,6 +7,12 @@ const getUserChoice = function () {
   return userChoice ? userChoice.toUpperCase() : null;
 };
 
+const getComputerChoice = function () {
+  const options = ['R', 'P', 'S'];
+  const index = Math.floor(Math.random() * options.length);
+  return options[index];
+};
+
 // function to compare choices
 const compareChoice = function (userChoice, aiChoice) {
   // win condition
@@ -43,4 +49,26 @@ const playGame = function () {
   let win = 0;
   let lose = 0;
   let tie = 0;
+
+  do {
+    const userChoice = getUserChoice();
+    if (userChoice === null) {
+      return;
+    }
+    const aiChoice = getComputerChoice();
+    window.alert(`AI chose: ${aiChoice}`);
+
+    const result = compareChoice(userChoice, aiChoice);
+    if (result === 'win') {
+      win++;
+    } else if (result === 'lose') {
+      lose++;
+    } else {
+      tie++;
+    }
+    displayResults(win, lose, tie);
+  } while (askToPlayAgain());
+  window.alert('thanks for playing');
 };
+
+playGame();
