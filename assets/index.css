@@ -1,5 +1,33 @@
+/* background color */
 body {
   background-color: #ccc;
 }
 
+/* center  */
+.selections {
+  display: fex;
+  justify-content: center;
+}
+/* indivudal buttons */
+.selection {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 10rem;
+  /* grow or shrink */
+  transition: 100ms;
+}
 
+.selection:hover {
+  transform: scale(1.2);
+}
+
+/* css grid */
+.results {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+}
