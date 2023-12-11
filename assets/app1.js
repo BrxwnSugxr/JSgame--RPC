@@ -2,6 +2,8 @@
 // get all the selection button, based on the data attributes
 const selectionButtons = document.querySelectorAll('[data-selection');
 const finalColumn = document.querySelector('[data-final-column');
+const computerScopreSpam = document.querySelector('[data-computer-score]');
+const yourScoreSpan = document.querySelector('[data-your-score]');
 const selections = [
   {
     name: 'rock',
@@ -33,12 +35,21 @@ selectionButtons.forEach((selectionButtons) => {
 function makeSelection(selection) {
   const computerSelection = randomSelection();
   const yourWinner = isWinner(selection, computerSelection);
-  const computerwinner = isWinner(computerSelection, selection);
+  const computerWinner = isWinner(computerSelection, selection);
   console.log(computerSelection);
 
-  addSelectionResult(computerSelection, computerwinner);
+  addSelectionResult(computerSelection, computerWinner);
   addSelectionResult(selection, yourWinner);
+
+  if (yourWinner) incrementScore(yourScoreSpan);
+  if (computerWinner) incrementScore(computerScopreSpam);
+
 }
+
+function incrementScore(scoreSpan) {
+  scoreSpan.innerText = parseInt(scoreSpan.innerText) + 1;
+}
+
 // creating the function to check winner
 function addSelectionResult(selection, winner) {
   const div = document.createElement('div');
