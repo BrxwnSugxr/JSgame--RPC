@@ -1,6 +1,7 @@
 // this is now the UI interaction
 // get all the selection button, based on the data attributes
 const selectionButtons = document.querySelectorAll('[data-selection');
+const finalColumn = document.querySelector('[data-final-column');
 const selections = [
   {
     name: 'rock',
@@ -31,7 +32,24 @@ selectionButtons.forEach((selectionButtons) => {
 // displaying
 function makeSelection(selection) {
   const computerSelection = randomSelection();
+  const yourWinner = isWinner(selection, computerSelection);
+  const computerwinner = isWinner(computerSelection, selection);
   console.log(computerSelection);
+
+  addSelectionResult(computerSelection, computerwinner);
+  addSelectionResult(selection, yourWinner);
+}
+// creating the function to check winner
+function addSelectionResult(selection, winner) {
+  const div = document.createElement('div');
+  div.innerText = selection.emoji;
+  div.classList.add('result-selection');
+  if (winner) div.classList.add('winner');
+  finalColumn.after(div);
+}
+
+function isWinner(selection, opponentSelection) {
+  return selection.beats === opponentSelection.name;
 }
 
 // generating random choice
