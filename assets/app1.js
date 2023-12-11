@@ -27,7 +27,10 @@ const selections = [
 selectionButtons.forEach((selectionButtons) => {
   selectionButtons.addEventListener('click', (e) => {
     const selectionName = selectionButtons.dataset.selection;
-    makeSelection(selectionName);
+    const selection = selections.find(
+      (selection) => selection.name === selectionName
+    );
+    makeSelection(selection);
   });
 });
 // displaying
