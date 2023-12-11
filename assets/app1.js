@@ -8,11 +8,6 @@ const selections = [
     beats: 'scissor',
   },
   {
-    name: 'rock',
-    emoji: '✊🏾',
-    beats: 'scissor',
-  },
-  {
     name: 'paper',
     emoji: '🖐🏾',
     beats: 'rock',
