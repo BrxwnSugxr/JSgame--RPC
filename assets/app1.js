@@ -30,5 +30,12 @@ selectionButtons.forEach((selectionButtons) => {
 });
 // displaying
 function makeSelection(selection) {
-  console.log(selection);
+  const computerSelection = randomSelection();
+  console.log(computerSelection);
+}
+
+// generating random choice
+function randomSelection() {
+  const randomIndex = Math.floor(Math.random() * selections.length);
+  return selections[randomIndex];
 }
